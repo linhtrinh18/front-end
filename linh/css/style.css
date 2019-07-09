@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100&display=swap");
+/* Reset the front page */
+
+* {
+  border: 0;
+  margin: 0;
+}
+
+:root {
+  --primary-color: #007bff;
+}
+
+html body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.4;
+}
+
+
+/* Utilities */
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+.text-primary {
+  color: #007bff;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  background: #333;
+  padding: 1.2rem 2rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: #222;
+}
+
+.bg-dark {
+  background: #333;
+  color: #fff;
+}
+
+.bg-light {
+  background: #fff;
+  color: #333;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.mb-3 {
+  margin-bottom: 3rem;
+}
+.mb-4 {
+  margin-bottom: 4rem;
+}
+.mb-5 {
+  margin-bottom: 5rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.py-4 {
+  padding: 4rem 0;
+}
+.py-5 {
+  padding: 5rem 0;
+}
+
+.m-heading {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.s-lead {
+  font-size: 1.4rem;
+  margin-bottom: 1.3rem;
+  color: #333;
+  opacity: .7;
+  font-weight: 700 !important;
+}
+
+/* Introduction */
+
+#introduction {
+  background-color: #007bff;
+  height: 100vh;
+  text-align: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+#introduction .introduction-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 2rem;
+}
+
+#introduction .introduction-content .text-primary {
+  font-size: 3.5rem;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  line-height: 4.5rem;
+}
+#introduction .introduction-content .text-secondary {
+  color: #333;
+}
+
+#introduction .introduction-content .a-viewmywork {
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+/* About me */
+
+#about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+#about-me .my-picture {
+  display: inline-block;
+  width: 200px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+/* /* My Project Section */
+
+#my-profile {
+  height: 75vh;
+  max-width: 1100px;
+  background: #fff;
+  border: 1px #444 solid;
+  box-shadow: 3px 3px 20px #444;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: -14rem;
+  max-width: 1100px;
+  padding: 20px;
+}
+
+.front-end {
+  padding: 20px;
+  margin-top: 1.5rem;
+}
+
+
+
+.back-end {
+  padding: 20px;
+  margin-top: 1.5rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  opacity: .7;
+  margin-bottom: 3rem !important;
+  margin-top: 20px;
+}
+
+.card-lead {
+  font-weight: 700 !important;
+  font-size: 1.4rem;
+  margin-bottom: 1.3rem;
+  opacity: .7;
+}
+
+#my-profile ul {
+  font-size: 1.1rem;
+  opacity: .7;
+  margin-bottom: .6rem;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+
+#my-profile ul li {
+  list-style-type: none;
+  text-align: center;
+  margin-bottom: .6rem;
+}
+
+
+
+
+/* My Project */
+
+.my-project {
+  height: 75vh;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
+/* -----Flip Card------ */
+
+
+
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* -----End of Flip Card------ */
