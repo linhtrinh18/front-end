@@ -4,6 +4,7 @@
 * {
   border: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -11,11 +12,13 @@
 }
 
 html body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.4;
 }
 
-
+a {
+  text-decoration: none;
+}
 /* Utilities */
 
 .container {
@@ -34,10 +37,47 @@ html body {
   display: inline-block;
   color: #fff;
   background: #333;
-  padding: 1.2rem 2rem;
+  padding: 0.7rem 1.5rem;
   border: none;
   border-radius: 5px;
 }
+
+.btn-submit {
+  display: block;
+  text-align: center;
+  color: #fff;
+  background: var(--primary-color);
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  margin: 0.5rem auto;
+}
+
+.btn-submit:hover {
+  cursor: pointer;
+  color: #333;
+  background: #ddd;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-card {
+  display: inline-block;
+  color: #fff;
+  background: var(--primary-color);
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 1rem 0;
+  z-index :1;
+}
+
+.btn-card:hover {
+  background: #007fff;
+}
+
 
 .btn:hover {
   background: #222;
@@ -69,6 +109,18 @@ html body {
   margin-bottom: 5rem;
 }
 
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mt-4 {
+  margin-top:4rem;
+}
+
+.mb-5 {
+  margin: 0.75rem;
+}
+
 .py-1 {
   padding: 1rem 0;
 }
@@ -85,10 +137,24 @@ html body {
   padding: 5rem 0;
 }
 
+.pt-3 {
+  padding-top: 3rem;
+}
+
+.m-5 {
+  margin: 0.6rem;
+}
 .m-heading {
   font-size: 2rem;
   margin-bottom: 0.75rem;
   line-height: 1.1;
+}
+
+.heading {
+  font-size: 3rem;
+  margin: 1.2rem 0;
+  line-height: 1.1;
+  color: #fff;
 }
 
 .text-center {
@@ -104,7 +170,7 @@ html body {
   font-size: 1.4rem;
   margin-bottom: 1.3rem;
   color: #333;
-  opacity: .7;
+  opacity: 0.7;
   font-weight: 700 !important;
 }
 
@@ -151,30 +217,30 @@ html body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
+  height: 80vh;
 }
 
 #about-me .my-picture {
   display: inline-block;
-  width: 200px;
+  width: 300px;
   background: var(--primary-color);
-  border-radius: 50%;
+  border-radius: 70%;
 }
 
 /* /* My Project Section */
 
 #my-profile {
-  height: 75vh;
+  height: 100%;
   max-width: 1100px;
   background: #fff;
-  border: 1px #444 solid;
-  box-shadow: 3px 3px 20px #444;
+  border: 1px #dedede solid;
+  box-shadow: 1px 1px 5px #dedede;
   border-radius: 5px;
   display: flex;
-  justify-content: space-around;;
+  justify-content: space-around;
   text-align: center;
   margin: 0 auto;
-  margin-top: -14rem;
+  margin-top: -7rem;
   max-width: 1100px;
   padding: 20px;
 }
@@ -184,8 +250,6 @@ html body {
   margin-top: 1.5rem;
 }
 
-
-
 .back-end {
   padding: 20px;
   margin-top: 1.5rem;
@@ -193,7 +257,7 @@ html body {
 
 .card-text {
   font-size: 1rem;
-  opacity: .7;
+  opacity: 0.7;
   margin-bottom: 3rem !important;
   margin-top: 20px;
 }
@@ -202,49 +266,42 @@ html body {
   font-weight: 700 !important;
   font-size: 1.4rem;
   margin-bottom: 1.3rem;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 #my-profile ul {
   font-size: 1.1rem;
-  opacity: .7;
-  margin-bottom: .6rem;
+  opacity: 0.7;
+  margin-bottom: 0.6rem;
   list-style-type: none;
   padding-left: 0;
   margin-top: 20px;
 }
 
-
 #my-profile ul li {
   list-style-type: none;
   text-align: center;
-  margin-bottom: .6rem;
+  margin-bottom: 0.6rem;
 }
-
-
-
 
 /* My Project */
 
 .my-project {
-  height: 75vh;
+  height: 100%;
   max-width: 1100px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
   margin: 0 auto;
 }
 
-
-
 /* -----Flip Card------ */
-
-
 
 .flip-card {
   background-color: transparent;
-  width: 200px;
-  height: 200px;
+  width: 20rem;
+  height: 18rem;
   perspective: 1000px;
 }
 
@@ -255,29 +312,94 @@ html body {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
 }
 
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
 .flip-card-back {
-  background-color: #2980b9;
-  color: white;
+  background-color: #333;
+  color: #fff;
+  padding: 1.5rem 0.75rem;
   transform: rotateY(180deg);
 }
 
 /* -----End of Flip Card------ */
+
+.project-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background: url("../img/coffee.jpg") no-repeat center center/cover;
+  z-index: -1;
+
+}
+
+.project-1-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 0 2rem;
+  /* Overlay */
+  position: absolute;
+  left:0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,123,255,0.9);
+}
+
+/* Contact-me */
+
+#contact-me {
+  height: 50vh;
+}
+
+
+#contact-me .contact-form .form-group{
+ margin: 1rem 3rem;
+}
+
+
+
+
+
+#contact-me .contact-form input{
+  width: 48%;
+  padding: 1rem;
+  display: inline-block;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+#contact-me .contact-form .form-group textarea{
+  width: 96.3%;
+  padding: 0.5rem 0.5rem 8rem 0.5rem;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+
+#my-project i {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+/* AIzaSyAUgiL4xWDC1vgwvZsCO7AQ14zFrmcLfHY */
